@@ -53,6 +53,7 @@ envoy_cc_library(
         "@envoy//envoy/stream_info:filter_state_interface",
         "@envoy//source/common/http:utility_lib",
         "@envoy//source/common/network:utility_lib",
+        "@envoy//source/common/network:filter_state_dst_address_lib",
         "@envoy//source/common/protobuf",
         "@envoy//source/common/protobuf:utility_lib",
         "@envoy//source/common/stream_info:bool_accessor_lib",
