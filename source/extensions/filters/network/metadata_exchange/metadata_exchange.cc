@@ -299,7 +299,8 @@ void MetadataExchangeFilter::setMetadataNotFoundFilterState() {
         // Query upstream peer data and save it in metadata for stats
         const auto metadata_object = config_->metadata_provider_->GetMetadata(upstream_peer);
         if (metadata_object) {
-          ENVOY_LOG(debug, "Metadata found for upstream peer address {}", upstream_peer->asString());
+          ENVOY_LOG(debug, "Metadata found for upstream peer address {}",
+                    upstream_peer->asString());
           read_callbacks_->connection().streamInfo().filterState()->setData(
               Istio::Common::UpstreamPeer,
               std::make_shared<Istio::Common::WorkloadMetadataObject>(metadata_object.value()),
